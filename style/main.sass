@@ -1,0 +1,262 @@
+// colors
+$white : #F2F2F2
+$black : #303036
+$green : #57C4B9
+$purple : #EE5B5B
+
+*
+  transition-timing-function: ease-in-out
+  transition: 0.5s
+  box-sizing: border-box
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+
+html, body
+  background-color: $white
+  color: $black
+  font-family: 'Poppins', sans-serif
+  font-weight: 200
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  margin: 0
+  padding: 0
+  .top
+    position: fixed
+    width: 100%
+    z-index: 99
+    text-align: center
+    padding: 10px
+    p
+      margin: 0
+      display: inline-block
+      margin-top: 15px
+      font-weight: 500
+    .menu-toggle
+      padding: 5px
+      width: 34px
+      height: 35px
+      background-color: transparent
+      border: none
+      position: absolute
+      top: 20px
+      right: 20px
+      cursor: pointer
+      @media all and (min-width: 1020px)
+        right: auto!important
+        left: 50%!important
+        margin-left: 450px!important
+      .line
+        height: 2px
+        width: 20px
+        background-color: $black
+        margin: 5px 0
+    .close
+      cursor: pointer
+      position: absolute
+      top: -100px
+      left: 10%
+      margin: 0
+      opacity: 0
+      z-index: 11
+      .line
+        height: 2px
+        width: 20px
+        background-color: $black
+        margin: 5px 0
+      .line-one_transform
+        -webkit-transform: rotate(45deg)
+        -moz-transform: rotate(45deg)
+        -ms-transform: rotate(45deg)
+        -o-transform: rotate(45deg)
+        transform: rotate(45deg)
+      .line-two_transform
+        -webkit-transform: rotate(-45deg) translate(5px,-5px)
+        -moz-transform: rotate(-45deg) translate(5px,-5px)
+        -ms-transform: rotate(-45deg) translate(5px,-5px)
+        -o-transform: rotate(-45deg) translate(5px,-5px)
+        transform: rotate(-45deg) translate(5px,-5px)
+    .close:hover
+      -webkit-transform: scale(1.2)
+      -moz-transform: scale(1.2)
+      -ms-transform: scale(1.2)
+      -o-transform: scale(1.2)
+      transform: scale(1.2)
+  .menu
+    position: fixed
+    display: block
+    width: 100%
+    height: 0%
+    background-color: $white
+    overflow: hidden
+    z-index: 12
+    font-size: 1.2em
+    text-align: center
+    font-weight: 300
+    ul
+      padding: 10%
+      list-style: none
+  .content
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    overflow: hidden
+    .slider
+      height: 100%
+      width: 100%
+      h1
+        font-size: 0.8em
+        font-weight: 300
+        max-width: 640px
+        margin: 20px auto
+        line-height: 1.5em
+        text-align: left
+      .box
+        background-color: $white
+        width: 480px
+        height: 300px
+        display: inline-block
+        position: absolute
+        overflow: hidden
+        text-align: center
+        -webkit-overflow-scrolling: touch
+        top: calc(50% - 150px)
+        @media all and (min-width: 980px)
+          width: 640px
+          height: 400px
+          top: calc(50% - 200px)
+        @media all and (max-width: 780px)
+          width: 300px
+          height: 200px
+          top: calc(50% - 100px)
+        .main-image
+          width: 100%
+          height: auto
+          max-width: 640px
+          cursor: pointer
+        .outer-content
+          .section
+            display: block
+            padding: 50px 0
+            margin: 100px auto
+            max-width: 900px
+            overflow: auto
+            @media all and (max-width: 780px)
+              width: 350px
+            @media all and (max-width: 520px)
+              width: 250px
+            .content-img
+              width: 50%
+              float: left
+              max-width: 400px
+              @media all and (max-width: 780px)
+                width: 100%
+                max-width: 400px
+                margin-bottom: 50px
+            .section-content
+              width: 50%
+              text-align: left
+              float: right
+              padding-left: 30px
+              padding-top: 100px
+              @media all and (max-width: 780px)
+                width: 100%
+                padding-left: 0
+                padding-top: 0
+              .section-title
+                font-weight: 500
+              .section-date
+                font-style: italic
+                font-size: 0.8em
+              .section-description
+                font-weight: 300
+                font-size: 0.8em
+  .slide-numbers
+    position: fixed
+    bottom: 20px
+    font-weight: 300
+    color: $black
+    z-index: 2
+    width: 100%
+    text-align: center
+    padding: 0
+    li
+      display: inline-block
+      margin: 0 20px
+      font-size: 1.2em
+      cursor: pointer
+      @media all and (max-width: 780px)
+        font-size: 1em
+        margin: 0 15px
+    .active
+      font-weight: 500
+      text-decoration: underline
+    li:hover
+      -webkit-transform: translateY(-5px)
+      -moz-transform: translateY(-5px)
+      -ms-transform: translateY(-5px)
+      -o-transform: translateY(-5px)
+      transform: translateY(-5px)
+  .arrow
+    position: absolute
+    top: 10%
+    font-size: 1.5em
+    cursor: pointer
+    height: 80%
+    width: 10%
+    display: table
+    text-align: center
+  #arrow-left
+    left: 0px
+    opacity: 1
+    i
+      display: table-cell
+      vertical-align: middle
+  #arrow-right
+    right: 0px
+    i
+      display: table-cell
+      vertical-align: middle
+.none
+  display: none!important
+.expand
+  width: 100%!important
+  height: 100%!important
+  top: 0!important
+  overflow: scroll!important
+  z-index: 9999!important
+  padding: 10%!important
+  padding-top: 100px!important
+  -webkit-user-drag: auto!important
+  -moz-user-drag: auto!important
+  -ms-user-drag: auto!important
+  -o-user-drag: auto!important
+  .main-image, h1
+    @media all and (max-width: 780px)
+      width: 350px!important
+    @media all and (max-width: 520px)
+      width: 250px!important
+.behind
+  z-index: -1!important
+.menu-show
+  height: 100%!important
+.line-one_transform
+  -webkit-transform: rotate(45deg)
+  -moz-transform: rotate(45deg)
+  -ms-transform: rotate(45deg)
+  -o-transform: rotate(45deg)
+  transform: rotate(45deg)
+.line-two_transform
+  -webkit-transform: rotate(-45deg) translate(5px,-5px)
+  -moz-transform: rotate(-45deg) translate(5px,-5px)
+  -ms-transform: rotate(-45deg) translate(5px,-5px)
+  -o-transform: rotate(-45deg) translate(5px,-5px)
+  transform: rotate(-45deg) translate(5px,-5px)
+.close-show
+  opacity: 1!important
+  top: 30px!important
+.invisible
+  opacity: 0 !important
